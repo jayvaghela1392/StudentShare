@@ -10,15 +10,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.LoginActivity">
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.RegisterActivity" />
-        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UserAreaActivity" />
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.RegisterActivity" />
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UserAreaActivity" />
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.Welcome" />
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.Splash">
             <intent-filter>
@@ -27,8 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UserSearch" />
-        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.Results"></activity>
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UserSearch" />
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.Requests.Results"></activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.example.jayvaghela.loginregister.R;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI.UserAreaActivity;
 
 public class Welcome extends AppCompatActivity {
 

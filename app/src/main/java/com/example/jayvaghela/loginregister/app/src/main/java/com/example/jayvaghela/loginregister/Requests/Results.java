@@ -1,4 +1,4 @@
-package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister;
+package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

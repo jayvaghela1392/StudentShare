@@ -1,4 +1,4 @@
-package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister;
+package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.jayvaghela.loginregister.R;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.RegisterRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;

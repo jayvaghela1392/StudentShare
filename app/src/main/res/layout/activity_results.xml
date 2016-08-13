@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".app.src.main.java.com.example.jayvaghela.loginregister.Results">
+    tools:context=".app.src.main.java.com.example.jayvaghela.loginregister.Requests.Results">
 
     <TextView
         android:layout_width="wrap_content"
