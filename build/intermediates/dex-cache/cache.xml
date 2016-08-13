@@ -1,2 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.3.0_16748e79ed2637e9a24034475f34a0e138b10f22.jar" />
+    </item>
+    <item
+        jar="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.3.0_864df75fcc66977b81e5a82db30b33c11c84e5f8.jar" />
+    </item>
+    <item
+        jar="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/com.android.volley-volley-1.0.0_d378d7ea99542a1dd786ca29da9c4dcb58a6f0b3.jar" />
+    </item>
+    <item
+        jar="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.3.0_22f658b90c2b686fa4e9f4f45b3ce3c99ccee981.jar" />
+    </item>
+    <item
+        jar="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.3.0_c60dfe27bd2b1020c7896e7be213c0b3ca9ecabc.jar" />
+    </item>
+    <item
+        jar="/Users/jayvaghela/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0_a576d005b284e1b5785dd9700af2f4a4edfb9005.jar" />
+    </item>
+    <item
+        jar="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="13dd872fa41155a4d303e08d1883822da5c58426">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_610e43a00437f6da3cf63b08c788c80989f6bb36.jar" />
+    </item>
+    <item
+        jar="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0_ec5e594a0166fc66ad95f036b7de179d8e5da17a.jar" />
+    </item>
+    <item
+        jar="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="42bfbb0e6f6cb54c4820e74f299860e4656ca404">
+        <dex dex="/Users/jayvaghela/Desktop/StudentShare/app/build/intermediates/pre-dexed/debug/instant-run_32b1d9a5880b905e23a3fa580f30a8e6bbcfc852.jar" />
+    </item>
+
+</items>
