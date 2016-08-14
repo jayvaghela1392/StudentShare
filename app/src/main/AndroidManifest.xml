@@ -28,7 +28,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UserSearch" />
-        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.Requests.Results"></activity>
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.Requests.Results" />
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UserProfileActivity" />
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UpdateDetailsActivity"></activity>
     </application>
 
 </manifest>
