@@ -1,6 +1,5 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests;
 
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
@@ -14,7 +13,7 @@ public class UserSearchRequest extends StringRequest {
     private Map<String, String> params;
 
     public UserSearchRequest(String university, String module, Response.Listener<String> listener) {
-        super(Request.Method.POST, SEARCH_REQUEST_URL, listener, null);
+        super(Method.GET, SEARCH_REQUEST_URL, listener, null);
         params = new HashMap<>();
         params.put("university", university);
         params.put("module", module);
