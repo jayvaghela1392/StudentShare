@@ -61,13 +61,13 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
 
                             boolean success = jsonResponse.getBoolean("success");
                             if (success) {
-                               // String name = jsonResponse.getString("name");
-                               // int age = jsonResponse.getInt("age");
+                                String name = jsonResponse.getString("username");
+                                String age = jsonResponse.getString("module");
 
                                 //Intent intent = new Intent(LoginActivity.this, Welcome.class);
                                 Intent intent = new Intent(UserSearch.this, Results.class);
 
-                                intent.putExtra("university", university);
+                                intent.putExtra("", university);
                                 intent.putExtra("module", module);
 
                                 UserSearch.this.startActivity(intent);

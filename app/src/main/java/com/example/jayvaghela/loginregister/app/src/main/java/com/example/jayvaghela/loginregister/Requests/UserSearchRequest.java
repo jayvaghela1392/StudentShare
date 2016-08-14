@@ -18,7 +18,6 @@ public class UserSearchRequest extends StringRequest {
         params.put("university", university);
         params.put("module", module);
 
-
     }
 
     @Override
