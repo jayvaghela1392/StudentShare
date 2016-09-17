@@ -24,8 +24,9 @@
         android:id="@+id/imageView10"
         android:src="@drawable/sn"
         android:layout_below="@+id/imageView9"
-        android:layout_toLeftOf="@+id/btnsm"
-        android:layout_toStartOf="@+id/btnsm" />
+
+        android:layout_alignRight="@+id/imageView9"
+        android:layout_alignEnd="@+id/imageView9" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -47,9 +48,9 @@
         android:id="@+id/btnsc"
         android:textColor="#ef196f"
         android:background="@android:drawable/editbox_background_normal"
-        android:layout_below="@+id/imageView10"
-        android:layout_toRightOf="@+id/imageView10"
-        android:layout_toEndOf="@+id/imageView10" />
+        android:layout_above="@+id/btnsm"
+        android:layout_alignLeft="@+id/btnsm"
+        android:layout_alignStart="@+id/btnsm" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -69,10 +70,8 @@
         android:textColor="#ef196f"
         android:background="@android:drawable/editbox_background_normal"
         android:layout_below="@+id/btnsm"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="39dp"
-        android:layout_toLeftOf="@+id/btnsm"
+        android:layout_alignRight="@+id/qsearch"
+        android:layout_alignEnd="@+id/qsearch"
         android:layout_alignLeft="@+id/btnsm"
         android:layout_alignStart="@+id/btnsm" />
 
@@ -80,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etSearchCourse"
-        android:layout_below="@+id/imageView10"
+        android:layout_alignTop="@+id/btnsc"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/btnsc"
