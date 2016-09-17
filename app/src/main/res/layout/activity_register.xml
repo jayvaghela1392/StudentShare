@@ -19,8 +19,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="88dp"
-        android:layout_alignRight="@+id/etPassword"
-        android:layout_alignEnd="@+id/etPassword" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -30,9 +30,11 @@
         android:id="@+id/etPassword"
         android:hint="Password"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+
         android:layout_below="@+id/etUsername"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -53,9 +55,11 @@
         android:id="@+id/etEmailAddress"
         android:hint="Email Address"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/etPassword" />
+        android:layout_below="@+id/etPassword"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -63,9 +67,11 @@
         android:id="@+id/etUniversity"
         android:hint="University"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+
         android:layout_below="@+id/etEmailAddress"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -84,5 +90,6 @@
         android:id="@+id/imageView7"
         android:src="@drawable/head"
         android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
