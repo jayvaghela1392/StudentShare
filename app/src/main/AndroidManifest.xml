@@ -17,7 +17,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.RegisterActivity" />
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UserAreaActivity" />
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.Welcome" />
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.Splash">

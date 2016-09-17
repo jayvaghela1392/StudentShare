@@ -23,122 +23,87 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView10"
         android:src="@drawable/sn"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView9"
-        android:layout_alignParentLeft="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search University"
-        android:id="@+id/bSU"
-        android:textColor="#ef196f"
-        android:background="@android:drawable/editbox_background_normal"
-        android:layout_alignBottom="@+id/etUniversitySearch"
-        android:layout_alignRight="@+id/imageView10"
-        android:layout_alignEnd="@+id/imageView10" />
+        android:layout_toLeftOf="@+id/btnsm"
+        android:layout_toStartOf="@+id/btnsm" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search Module"
-        android:id="@+id/bM"
-        android:layout_below="@+id/bSU"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/bSU"
-        android:layout_alignStart="@+id/bSU"
+        android:id="@+id/btnsm"
         android:textColor="#ef196f"
-        android:background="@android:drawable/editbox_background_normal" />
+        android:background="@android:drawable/editbox_background_normal"
+        android:layout_alignRight="@+id/imageView9"
+        android:layout_alignEnd="@+id/imageView9"
+        android:layout_centerVertical="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search Course"
-        android:id="@+id/bB"
-        android:layout_below="@+id/bM"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/bM"
-        android:layout_alignStart="@+id/bM"
+        android:id="@+id/btnsc"
         android:textColor="#ef196f"
-        android:background="@android:drawable/editbox_background_normal" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etUniversitySearch"
-        android:layout_below="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/bSU"
-        android:layout_toStartOf="@+id/bSU" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etModuleSearch"
-        android:layout_above="@+id/bB"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/bM"
-        android:layout_toStartOf="@+id/bM" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etCourseSearch"
-        android:layout_below="@+id/bM"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/bB"
-        android:layout_toLeftOf="@+id/bM"
-        android:layout_toStartOf="@+id/bM" />
+        android:background="@android:drawable/editbox_background_normal"
+        android:layout_below="@+id/imageView10"
+        android:layout_toRightOf="@+id/imageView10"
+        android:layout_toEndOf="@+id/imageView10" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/qsearch"
         android:src="@drawable/mg"
-        android:layout_below="@+id/etCourseSearch"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnsu" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search Username"
-        android:id="@+id/button"
+        android:id="@+id/btnsu"
         android:textColor="#ef196f"
         android:background="@android:drawable/editbox_background_normal"
-        android:layout_alignBottom="@+id/etUsernameSearch"
-        android:layout_toRightOf="@+id/etModuleSearch"
-        android:layout_toEndOf="@+id/etModuleSearch" />
+        android:layout_below="@+id/btnsm"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="39dp"
+        android:layout_toLeftOf="@+id/btnsm"
+        android:layout_alignLeft="@+id/btnsm"
+        android:layout_alignStart="@+id/btnsm" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etUsernameSearch"
+        android:id="@+id/etSearchCourse"
         android:layout_below="@+id/imageView10"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etModuleSearch"
-        android:layout_alignEnd="@+id/etModuleSearch" />
+        android:layout_toLeftOf="@+id/btnsc"
+        android:layout_toStartOf="@+id/btnsc" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Search All"
-        android:id="@+id/textView10"
-        android:textColor="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/bB"
-        android:layout_marginBottom="38dp"
-        android:layout_toLeftOf="@+id/bB" />
+        android:id="@+id/etSearchModule"
+        android:layout_alignTop="@+id/btnsm"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/etSearchCourse"
+        android:layout_alignEnd="@+id/etSearchCourse" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etSearchUsername"
+        android:layout_alignTop="@+id/btnsu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/etSearchModule"
+        android:layout_alignEnd="@+id/etSearchModule" />
 
 </RelativeLayout>
