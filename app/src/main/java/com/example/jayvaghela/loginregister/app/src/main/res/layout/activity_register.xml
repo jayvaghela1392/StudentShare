@@ -41,8 +41,9 @@
         android:id="@+id/bRegister"
         android:textColor="#08a4ff"
         android:background="@android:drawable/editbox_background_normal"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etCourse" />
+        android:layout_marginBottom="49dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -88,4 +89,12 @@
         android:src="@drawable/head"
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etTest"
+        android:layout_below="@+id/bRegister"
+        android:layout_toStartOf="@+id/bRegister"
+
 </RelativeLayout>

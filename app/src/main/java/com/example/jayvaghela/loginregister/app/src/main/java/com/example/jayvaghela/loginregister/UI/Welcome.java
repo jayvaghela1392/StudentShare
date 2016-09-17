@@ -1,4 +1,4 @@
-package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI;
+package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,22 +8,20 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.example.jayvaghela.loginregister.R;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI.UserAreaActivity;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI.UserSearch;
 
 public class Welcome extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-
-
 
         final ImageView iv = (ImageView) findViewById(R.id.imageView8);
 
         final Animation an = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
 
         final Animation an2 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.abc_fade_out);
-
 
         iv.startAnimation(an);
         an.setAnimationListener(new Animation.AnimationListener() {
@@ -36,7 +34,7 @@ public class Welcome extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 iv.startAnimation(an2);
                 finish();
-                Intent i = new Intent(Welcome.this, UserAreaActivity.class);
+                Intent i = new Intent(Welcome.this, UserSearch.class);
                 startActivity(i);
             }
 
