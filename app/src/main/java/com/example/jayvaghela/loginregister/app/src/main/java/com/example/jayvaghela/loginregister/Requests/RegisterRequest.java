@@ -1,34 +1,47 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests;
 
-import com.android.volley.Response;
-import com.android.volley.toolbox.StringRequest;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.widget.Toast;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI.LoginActivity;
 
 /**
  * Created by jayvaghela on 23/04/2016.
  */
-public class RegisterRequest extends StringRequest {
+public class RegisterRequest extends AsyncTask<String, Void, String> {
 
+    String url = "/user/register";
 
-    private static final String REGISTER_REQUEST_URL = "http://studentshareapp.comxa.com/Register.php";
-    private Map<String, String> params;
-
-    public RegisterRequest(String name, String username, int age, String password, Response.Listener<String> listener){
-        super(Method.POST, REGISTER_REQUEST_URL, listener, null);
-        params = new HashMap<>();
-        params.put("name", name);
-        params.put("username", username);
-        params.put("password", password);
-        params.put("age", age + "");
-
-
+    Context context;
+    public RegisterRequest(Context context){
+        this.context = context;
     }
+
     @Override
-    public Map <String, String> getParams(){
-        return params;
+    protected String doInBackground(String... params) {
+        String username = params[0];
+        String password = params[0];
+        String university = params[0];
+        String course = params[0];
+        String email = params[0];
 
+        HTTP_Methods http_methods = new HTTP_Methods();
+        String parameters = ("username="+username+"&password="+password+"&university="+university+"&course="+course+"&email="+email);
+
+        String response = http_methods.POST(url, parameters);
+        return response.replace("\n", "");
     }
 
+    @Override
+    protected void onPostExecute(String s) {
+        if (s.equalsIgnoreCase("Success")) {
+            Intent takeUserToLogin = new Intent(context, LoginActivity.class);
+            context.startActivity(takeUserToLogin);
+        } else {
+
+            Toast.makeText(context, "This username already exist", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

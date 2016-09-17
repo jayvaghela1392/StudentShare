@@ -1,8 +1,5 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Objects;
 
-/**
- * Created by samsonaiyegbusi on 13/08/16.
- */
 public class Student {
     private String username;
     private int age;

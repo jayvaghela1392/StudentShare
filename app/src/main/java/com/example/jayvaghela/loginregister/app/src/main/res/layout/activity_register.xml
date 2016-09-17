@@ -34,19 +34,6 @@
         android:layout_below="@+id/etUsername"
         android:layout_alignParentLeft="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/etAge"
-        android:hint="Age"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etPassword"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/etPassword"
-        android:layout_alignEnd="@+id/etPassword" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,8 +41,8 @@
         android:id="@+id/bRegister"
         android:textColor="#08a4ff"
         android:background="@android:drawable/editbox_background_normal"
-        android:layout_below="@+id/etYearofStudy"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etCourse" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -66,8 +53,8 @@
         android:hint="Email Address"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/etAge"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/etPassword" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -94,25 +81,11 @@
         android:layout_alignRight="@+id/etUniversity"
         android:layout_alignEnd="@+id/etUniversity" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/etYearofStudy"
-        android:hint="YearofStudy"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etCourse"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/etCourse"
-        android:layout_alignEnd="@+id/etCourse" />
-
     <ImageView
         android:layout_width="165dp"
         android:layout_height="178dp"
         android:id="@+id/imageView7"
         android:src="@drawable/head"
         android:layout_gravity="center_horizontal"
-        android:layout_above="@+id/etAge"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
