@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.jayvaghela.loginregister.R;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.RegisterRequest;
+
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,12 +20,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     Button bRegister;
 
+    RegisterRequest rq;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-       // etCourse = (EditText) findViewById(R.id.etCourse);
+        etCourse = (EditText) findViewById(R.id.etCourse);
         etUni = (EditText) findViewById(R.id.etUniversity);
         etEmail = (EditText) findViewById(R.id.etEmail);
         etUsername = (EditText) findViewById(R.id.etUsername);
@@ -46,11 +50,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
             case R.id.bRegister:
 
-                // String name = etName.getText().toString();
+                 String course = etCourse.getText().toString();
                  String username = etUsername.getText().toString();
                  String password = etPassword.getText().toString();
+                 String email = etEmail.getText().toString();
+                 String uni = etUni.getText().toString();
 
-
+                rq = new RegisterRequest(this);
+                rq.execute(new String[]{username, password, uni, course, email});
                 break;
 
         }

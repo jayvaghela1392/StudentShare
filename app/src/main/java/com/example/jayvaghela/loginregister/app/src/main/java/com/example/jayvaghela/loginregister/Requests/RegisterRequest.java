@@ -38,9 +38,10 @@ public class RegisterRequest extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String s) {
         if (s.equalsIgnoreCase("Success")) {
             Intent takeUserToLogin = new Intent(context, LoginActivity.class);
+            Toast.makeText(context, "You have successfully made an account", Toast.LENGTH_SHORT).show();
             context.startActivity(takeUserToLogin);
-        } else {
 
+        } else {
             Toast.makeText(context, "This username already exist", Toast.LENGTH_SHORT).show();
         }
     }
