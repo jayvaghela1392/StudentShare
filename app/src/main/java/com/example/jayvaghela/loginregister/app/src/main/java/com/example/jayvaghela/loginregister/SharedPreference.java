@@ -17,6 +17,8 @@ public class SharedPreference {
     Context context;
 
     public static final String username = "username";
+    public static final String response = "response";
+
 
     private HashMap<String, String> user = new HashMap<String, String>();
 
@@ -30,8 +32,16 @@ public class SharedPreference {
 
     }
 
+
+    public void response(String xmlresponse){
+
+        editor.putString(response, xmlresponse);
+
+        editor.commit();
+    }
     public HashMap<String, String> getUserDetails() {
         user.put(username, pref.getString(username, null));
+        user.put(response, pref.getString(response, null));
 
         return user;
 

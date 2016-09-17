@@ -1,29 +1,21 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI;
 
-import android.app.AlertDialog;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
 import com.example.jayvaghela.loginregister.R;
-import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.Results;
-import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.UserSearchRequest;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ResultsRequest;
 
 public class UserSearch extends AppCompatActivity implements View.OnClickListener{
-     Button Qsearch;
+     Button btnsm;
+     Button btnsu;
 
-    EditText etUniversity;
+    EditText etCourse;
     EditText etModule ;
-
+    EditText etUsername;
 
 
     @Override
@@ -32,13 +24,18 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_user_search);
 
         //set buttons
-        etUniversity = (EditText) findViewById(R.id.etUniversity);
-        etModule = (EditText) findViewById(R.id.etModule);
-
+        etCourse = (EditText) findViewById(R.id.etSearchCourse);
+        etModule = (EditText) findViewById(R.id.etSearchModule);
+        etUsername = (EditText) findViewById(R.id.etSearchUsername);
         //search buttons
 
-        Qsearch = (Button) findViewById(R.id.Qsearch);
-        Qsearch.setOnClickListener(this);
+        btnsm = (Button) findViewById(R.id.btnsm);
+        btnsm.setOnClickListener(this);
+
+        btnsu = (Button) findViewById(R.id.btnsu);
+        btnsu.setOnClickListener(this);
+
+
 
 
     }
@@ -47,51 +44,27 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.Qsearch:
+            case R.id.btnsm:
 
-               final  String university = etUniversity.getText().toString();
-                final String module = etModule.getText().toString();
-
-
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonResponse = new JSONObject(response);
-
-                            boolean success = jsonResponse.getBoolean("success");
-                            if (success) {
-                                String name = jsonResponse.getString("username");
-                                String age = jsonResponse.getString("module");
-
-                                //Intent intent = new Intent(LoginActivity.this, Welcome.class);
-                                Intent intent = new Intent(UserSearch.this, Results.class);
-
-                                intent.putExtra("", university);
-                                intent.putExtra("module", module);
-
-                                UserSearch.this.startActivity(intent);
-                            } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(UserSearch.this);
-                                builder.setMessage("Search Failed")
-                                        .setNegativeButton("Retry", null)
-                                        .create()
-                                        .show();
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
+                //String university = etUniversity.getText().toString();
+                String module = etModule.getText().toString();
+                String username = "";
 
 
-                };
+                ResultsRequest rq = new ResultsRequest(this);
+                rq.execute(new String[]{username, module});
 
-                UserSearchRequest usersearchrequest = new UserSearchRequest(university, module, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(UserSearch.this);
-                queue.add(usersearchrequest);
+                break;
 
+            case R.id.btnsu:
+
+                //String university = etUniversity.getText().toString();
+                String module_ = "";
+                String username_ = etUsername.getText().toString();
+
+
+                ResultsRequest rq_ = new ResultsRequest(this);
+                rq_.execute(new String[]{username_, module_});
 
                 break;
 

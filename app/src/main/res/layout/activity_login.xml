@@ -64,6 +64,7 @@
         android:id="@+id/imageView"
         android:src="@drawable/studentshareg"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#00ffffff" />
 
 </RelativeLayout>

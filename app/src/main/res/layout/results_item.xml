@@ -7,23 +7,24 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UserProfileActivity">
+    tools:context=".app.src.main.java.com.example.jayvaghela.loginregister.UI.Results">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="User Profile"
-        android:id="@+id/textView10"
+        android:text="Username"
+        android:id="@+id/etUsername"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <ImageView
-        android:layout_width="165dp"
-        android:layout_height="178dp"
-        android:id="@+id/imageView7"
-        android:src="@drawable/head"
-        android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/etUsername"
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endorsements"
+        android:id="@+id/tvEndorsements"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

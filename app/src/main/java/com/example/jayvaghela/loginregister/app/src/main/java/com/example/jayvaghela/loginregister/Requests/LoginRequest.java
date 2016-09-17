@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.SharedPreference;
-import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI.Welcome;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Welcome;
 
 
 public class LoginRequest extends AsyncTask<String, Void, String> {
