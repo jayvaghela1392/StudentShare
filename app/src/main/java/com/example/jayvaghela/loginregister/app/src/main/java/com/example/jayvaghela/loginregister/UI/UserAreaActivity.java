@@ -14,11 +14,16 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.jayvaghela.loginregister.R;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.UserRequest;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.SharedPreference;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+
 public class UserAreaActivity extends AppCompatActivity {
+
+    SharedPreference sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +39,15 @@ public class UserAreaActivity extends AppCompatActivity {
 
         String name = intent.getStringExtra("name");
 
+        sp = new SharedPreference(this);
+        HashMap<String, String> user = sp.getUserDetails();
+        String username = user.get(SharedPreference.username);
+
+
         //String username = intent.getStringExtra("username");
         //int age = intent.getIntExtra("age", -1);
 
-        String message = "Welcome " + name + "!";
+        String message = "Welcome " + username + "!";
         welcomeMessage.setText(message);
         //etName.setText(name);
         //etUsername.setText(username);

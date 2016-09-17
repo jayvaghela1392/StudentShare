@@ -22,10 +22,12 @@ public class RegisterRequest extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         String username = params[0];
-        String password = params[0];
-        String university = params[0];
-        String course = params[0];
-        String email = params[0];
+        String password = params[1];
+        String university = params[2];
+        String course = params[3];
+        String email = params[4];
+
+
 
         HTTP_Methods http_methods = new HTTP_Methods();
         String parameters = ("username="+username+"&password="+password+"&university="+university+"&course="+course+"&email="+email);
@@ -36,7 +38,7 @@ public class RegisterRequest extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        if (s.equalsIgnoreCase("Success")) {
+        if (s.equalsIgnoreCase("Successful")) {
             Intent takeUserToLogin = new Intent(context, LoginActivity.class);
             Toast.makeText(context, "You have successfully made an account", Toast.LENGTH_SHORT).show();
             context.startActivity(takeUserToLogin);

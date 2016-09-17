@@ -55,9 +55,6 @@ public class HTTP_Methods {
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public String POST(String url, String parameters)
     {
-
-
-
         try {
 
             URL Url = new URL(ip + url );
@@ -113,9 +110,6 @@ public class HTTP_Methods {
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public String PUT(String url, String parameters)
     {
-
-
-
         try {
 
             URL Url = new URL(ip + url );

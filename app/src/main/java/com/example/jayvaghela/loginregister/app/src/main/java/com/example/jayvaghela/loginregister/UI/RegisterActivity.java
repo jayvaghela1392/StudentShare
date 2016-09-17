@@ -29,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         etCourse = (EditText) findViewById(R.id.etCourse);
         etUni = (EditText) findViewById(R.id.etUniversity);
-        etEmail = (EditText) findViewById(R.id.etEmail);
+        etEmail = (EditText) findViewById(R.id.etEmailAddress);
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
 

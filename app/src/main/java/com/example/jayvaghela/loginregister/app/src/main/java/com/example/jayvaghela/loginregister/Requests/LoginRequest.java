@@ -1,27 +1,52 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.toolbox.StringRequest;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.widget.Toast;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.SharedPreference;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI.Welcome;
 
 
-public class LoginRequest extends StringRequest {
+public class LoginRequest extends AsyncTask<String, Void, String> {
+    String url = "/user/login?";
 
-    private static final String LOGIN_REQUEST_URL = "http://studentshareapp.comxa.com/Login.php";
-    private Map<String, String> params;
+    Context context;
+    String username;
 
-    public LoginRequest(String username, String password, Response.Listener<String> listener) {
-        super(Request.Method.POST, LOGIN_REQUEST_URL, listener, null);
-        params = new HashMap<>();
-        params.put("username", username);
-        params.put("password", password);
+    SharedPreference sp;
+
+    public LoginRequest(Context context){
+        this.context = context;
     }
+
     @Override
-    public Map<String, String> getParams() {
-        return params;
+    protected String doInBackground(String... params) {
+         username = params[0];
+        String password = params[1];
+
+
+        HTTP_Methods http_methods = new HTTP_Methods();
+        String parameters = ("username="+username+"&password="+password);
+
+        String response = http_methods.GET(url + parameters);
+        return response.replace("\n", "");
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        if (s.equalsIgnoreCase("Valid")) {
+            Intent takeUserToWelcome = new Intent(context, Welcome.class);
+            Toast.makeText(context, "Welcome " + username, Toast.LENGTH_SHORT).show();
+
+            sp = new SharedPreference(context);
+            sp.saveUsername(username);
+            context.startActivity(takeUserToWelcome);
+
+        } else {
+            Toast.makeText(context, "Invalid Username/Password", Toast.LENGTH_SHORT).show();
+        }
     }
 }
 
