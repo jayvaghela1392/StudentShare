@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.jayvaghela.loginregister.R;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.CourseSearchRequest;
@@ -19,6 +20,7 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
      Button btnsm;
      Button btnsu;
      Button btnsc;
+     Button btnUserProfile;
 
     EditText etCourse;
     EditText etModule ;
@@ -34,6 +36,7 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
         etCourse = (EditText) findViewById(R.id.etSearchCourse);
         etModule = (EditText) findViewById(R.id.etSearchModule);
         etUsername = (EditText) findViewById(R.id.etSearchUsername);
+
         //search buttons
 
         btnsm = (Button) findViewById(R.id.btnsm);
@@ -44,6 +47,9 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
 
         btnsc = (Button) findViewById(R.id.btnsc);
         btnsc.setOnClickListener(this);
+
+        btnUserProfile = (Button) findViewById(R.id.btnUserProfile);
+        btnUserProfile.setOnClickListener(this);
 
     }
 
