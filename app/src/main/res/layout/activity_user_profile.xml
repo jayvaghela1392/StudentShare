@@ -25,7 +25,7 @@
         android:text="Update Modules"
         android:textColor="#ef196f"
         android:background="@android:drawable/editbox_background_normal"
-        android:id="@+id/button"
+        android:id="@+id/btnUpdateModules"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -38,8 +38,8 @@
         android:text="See Connections"
         android:textColor="#08a4ff"
         android:background="@android:drawable/editbox_background_normal"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
+        android:id="@+id/btnUpdateConnections"
+        android:layout_alignTop="@+id/btnUpdateModules"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -48,14 +48,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/listView2"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/profilepic" />
+        android:layout_below="@+id/profilepic"
+        android:layout_above="@+id/btnUpdateModules" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView12"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
+        android:layout_alignRight="@+id/btnUpdateModules"
+        android:layout_alignEnd="@+id/btnUpdateModules"
         android:src="@drawable/welcome" />
 
     <ImageView

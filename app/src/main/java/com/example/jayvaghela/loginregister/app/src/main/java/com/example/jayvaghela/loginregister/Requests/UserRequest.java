@@ -1,3 +1,4 @@
+/*
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests;
 
 
@@ -7,9 +8,11 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+*/
 /**
  * Created by jayvaghela on 23/04/2016.
- */
+ *//*
+
 public class UserRequest extends StringRequest {
 
 
@@ -32,4 +35,4 @@ public class UserRequest extends StringRequest {
 
     }
 
-}
+}*/
