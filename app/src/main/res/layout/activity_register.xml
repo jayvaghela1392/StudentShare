@@ -87,7 +87,7 @@
     <ImageView
         android:layout_width="165dp"
         android:layout_height="178dp"
-        android:id="@+id/imageView7"
+        android:id="@+id/profilepic"
         android:src="@drawable/head"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"

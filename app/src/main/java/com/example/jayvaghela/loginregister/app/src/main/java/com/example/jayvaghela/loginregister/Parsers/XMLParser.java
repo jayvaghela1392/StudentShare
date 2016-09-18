@@ -1,6 +1,7 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Parsers;
 
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Objects.Modules;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Objects.Student;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -16,7 +17,7 @@ import java.util.List;
  */
 public class XMLParser {
 
-    public List<Modules> parseModules(String xml)
+    public List<Modules> parseUsers(String xml)
     {
         XmlPullParserFactory factory;
         List<Modules> Modules = new ArrayList();
@@ -81,5 +82,143 @@ public class XMLParser {
         return null;
     }
 
+    public List<Modules> parseModules(String xml)
+    {
+        XmlPullParserFactory factory;
+        List<Modules> Modules = new ArrayList();
+        Modules module = null;
+        String text = "";
+
+
+        try {
+            factory = XmlPullParserFactory.newInstance();
+
+            factory.setNamespaceAware(true);
+            XmlPullParser parser = factory.newPullParser();
+
+            if (xml == null)
+            {
+                return null;
+
+            }
+
+            parser.setInput( new StringReader( xml ) );
+            int eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                String tag = parser.getName();
+                switch(eventType)
+                {
+                    case XmlPullParser.START_TAG:
+
+                        if (tag.equalsIgnoreCase("modules"))
+                        {
+                            module = new Modules();
+                        }
+
+                    case XmlPullParser.TEXT:
+
+                        text = parser.getText();
+                        break;
+
+                    case XmlPullParser.END_TAG:
+
+                        if (tag.equalsIgnoreCase("username"))
+                        {
+                            module.setUsername(text);
+                            Modules.add(module);
+
+                        }
+
+                        if (tag.equalsIgnoreCase("endorsements"))
+                        {
+                            module.setEndorsements(Integer.parseInt(text));
+                        }
+
+                        if (tag.equalsIgnoreCase("Module"))
+                        {
+                            module.setModule(text);
+                        }
+
+                        if(tag.equalsIgnoreCase("rating")){
+
+                            module.setRating(Integer.parseInt(text));
+                        }
+
+                        break;
+                }
+                eventType = parser.next();
+            }
+            return Modules;
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Student parseUser(String xml)
+    {
+        XmlPullParserFactory factory;
+
+        Student user = null;
+        String text = "";
+
+
+        try {
+            factory = XmlPullParserFactory.newInstance();
+
+            factory.setNamespaceAware(true);
+            XmlPullParser parser = factory.newPullParser();
+
+            if (xml == null)
+            {
+                return null;
+
+            }
+
+            parser.setInput( new StringReader( xml ) );
+            int eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                String tag = parser.getName();
+                switch(eventType)
+                {
+                    case XmlPullParser.START_TAG:
+
+                        if (tag.equalsIgnoreCase("user"))
+                        {
+                            user = new Student();
+                        }
+
+                    case XmlPullParser.TEXT:
+
+                        text = parser.getText();
+                        break;
+
+                    case XmlPullParser.END_TAG:
+
+                        if (tag.equalsIgnoreCase("username"))
+                        {
+                            user.setUsername(text);
+
+                        }
+
+                        if (tag.equalsIgnoreCase("university"))
+                        {
+                            user.setUni(text);
+                        }
+
+                        break;
+                }
+                eventType = parser.next();
+            }
+            return user;
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

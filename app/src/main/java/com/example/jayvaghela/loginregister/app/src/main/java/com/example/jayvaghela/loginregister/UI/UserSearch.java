@@ -7,11 +7,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.jayvaghela.loginregister.R;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ModulesRequest;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ResultsRequest;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.UsernameSearchRequest;
+
+import java.util.concurrent.ExecutionException;
 
 public class UserSearch extends AppCompatActivity implements View.OnClickListener{
      Button btnsm;
      Button btnsu;
+     Button btnsc;
 
     EditText etCourse;
     EditText etModule ;
@@ -35,6 +40,9 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
         btnsu = (Button) findViewById(R.id.btnsu);
         btnsu.setOnClickListener(this);
 
+        btnsc = (Button) findViewById(R.id.btnsc);
+        btnsc.setOnClickListener(this);
+
 
 
 
@@ -46,7 +54,6 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
         {
             case R.id.btnsm:
 
-                //String university = etUniversity.getText().toString();
                 String module = etModule.getText().toString();
                 String username = "";
 
@@ -58,13 +65,28 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
 
             case R.id.btnsu:
 
-                //String university = etUniversity.getText().toString();
                 String module_ = "";
                 String username_ = etUsername.getText().toString();
 
 
-                ResultsRequest rq_ = new ResultsRequest(this);
-                rq_.execute(new String[]{username_, module_});
+                ModulesRequest mq = new ModulesRequest(this);
+                try {
+                    String modulesResponse = mq.execute(new String[]{username_, module_}).get();
+                    UsernameSearchRequest usr = new UsernameSearchRequest(this, modulesResponse);
+                    usr.execute(new String[]{username_});
+
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case R.id.btnsc:
+
+                String course = etCourse.getText().toString();
 
                 break;
 
