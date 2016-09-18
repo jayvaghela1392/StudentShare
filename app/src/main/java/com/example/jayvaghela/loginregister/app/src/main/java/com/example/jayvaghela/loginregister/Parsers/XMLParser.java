@@ -221,4 +221,72 @@ public class XMLParser {
         return null;
     }
 
+
+    public List<Student> parseCourse(String xml)
+    {
+        XmlPullParserFactory factory;
+        List<Student> students = new ArrayList();
+
+        Student user = null;
+        String text = "";
+
+
+        try {
+            factory = XmlPullParserFactory.newInstance();
+
+            factory.setNamespaceAware(true);
+            XmlPullParser parser = factory.newPullParser();
+
+            if (xml == null)
+            {
+                return null;
+
+            }
+
+            parser.setInput( new StringReader( xml ) );
+            int eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                String tag = parser.getName();
+                switch(eventType)
+                {
+                    case XmlPullParser.START_TAG:
+
+                        if (tag.equalsIgnoreCase("user"))
+                        {
+                            user = new Student();
+                        }
+
+                    case XmlPullParser.TEXT:
+
+                        text = parser.getText();
+                        break;
+
+                    case XmlPullParser.END_TAG:
+
+                        if (tag.equalsIgnoreCase("username"))
+                        {
+                            user.setUsername(text);
+                            students.add(user);
+
+                        }
+
+                        if (tag.equalsIgnoreCase("university"))
+                        {
+                            user.setUni(text);
+
+                        }
+
+                        break;
+                }
+                eventType = parser.next();
+            }
+            return students;
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

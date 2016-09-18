@@ -9,8 +9,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.jayvaghela.loginregister.R;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Adapaters.CourseResultsAdapter;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Adapaters.ResultsProfileAdapter;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Objects.Modules;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Objects.Student;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Parsers.XMLParser;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ModulesRequest;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.UsernameSearchRequest;
@@ -32,13 +34,29 @@ public class Results extends AppCompatActivity implements AdapterView.OnItemClic
         Bundle bundle = intent.getExtras();
 
         String response = bundle.getString("response");
+        String courseResponse = bundle.getString("courseresponse");
 
-        XMLParser parser = new XMLParser();
-       List<Modules> modules = parser.parseUsers(response);
+        TextView tv = (TextView) findViewById(R.id.etEndorsements);
         lv = (ListView) findViewById(R.id.listView);
 
-        lv.setAdapter( new ResultsProfileAdapter(this, modules));
-        lv.setOnItemClickListener(this);
+        XMLParser parser = new XMLParser();
+
+        if (courseResponse!= null)
+        {
+            tv.setText("University");
+            List<Student> students = parser.parseCourse(courseResponse);
+            lv.setAdapter(new CourseResultsAdapter(this, students));
+            lv.setOnItemClickListener(this);
+
+
+        } else {
+
+            List<Modules> modules = parser.parseUsers(response);
+
+            lv.setAdapter(new ResultsProfileAdapter(this, modules));
+            lv.setOnItemClickListener(this);
+
+        }
     }
 
 

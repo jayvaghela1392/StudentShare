@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.jayvaghela.loginregister.R;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.CourseSearchRequest;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ModulesRequest;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ResultsRequest;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.UsernameSearchRequest;
@@ -87,6 +88,9 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
             case R.id.btnsc:
 
                 String course = etCourse.getText().toString();
+
+                CourseSearchRequest csr = new CourseSearchRequest(this);
+                csr.execute(new String[]{course});
 
                 break;
 
