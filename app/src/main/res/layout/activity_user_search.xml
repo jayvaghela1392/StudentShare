@@ -52,15 +52,6 @@
         android:layout_alignLeft="@+id/btnsm"
         android:layout_alignStart="@+id/btnsm" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/qsearch"
-        android:src="@drawable/mg"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnsu" />
-
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -70,8 +61,6 @@
         android:textColor="#ef196f"
         android:background="@android:drawable/editbox_background_normal"
         android:layout_below="@+id/btnsm"
-        android:layout_alignRight="@+id/qsearch"
-        android:layout_alignEnd="@+id/qsearch"
         android:layout_alignLeft="@+id/btnsm"
         android:layout_alignStart="@+id/btnsm" />
 
@@ -104,5 +93,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/etSearchModule"
         android:layout_alignEnd="@+id/etSearchModule" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUserProfile"
+        android:src="@drawable/head"
+        android:layout_below="@+id/etSearchUsername"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

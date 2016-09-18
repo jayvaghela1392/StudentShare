@@ -1,5 +1,6 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -91,7 +92,14 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
 
                 break;
 
+            case R.id.btnUserProfile:
+                Intent takeUserToProfile= new Intent(this, UserProfileActivity.class );
+                startActivity(takeUserToProfile);
+
 
         }
+
+
+
     }
 }

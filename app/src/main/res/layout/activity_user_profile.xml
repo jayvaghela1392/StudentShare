@@ -27,9 +27,9 @@
         android:background="@android:drawable/editbox_background_normal"
         android:id="@+id/btnModules"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/btnInvitations"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btnConnections" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -70,17 +70,5 @@
         android:layout_alignEnd="@+id/listView2"
         android:layout_toRightOf="@+id/imageView12"
         android:layout_toEndOf="@+id/imageView12" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Invitations"
-        android:textColor="#08a4ff"
-        android:background="@android:drawable/editbox_background_normal"
-        android:id="@+id/btnInvitations"
-        android:layout_below="@+id/listView2"
-        android:layout_toLeftOf="@+id/btnConnections"
-        android:layout_toStartOf="@+id/btnConnections" />
 
 </RelativeLayout>
