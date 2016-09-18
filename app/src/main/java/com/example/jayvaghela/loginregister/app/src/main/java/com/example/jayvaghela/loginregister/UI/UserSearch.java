@@ -44,9 +44,6 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
         btnsc = (Button) findViewById(R.id.btnsc);
         btnsc.setOnClickListener(this);
 
-
-
-
     }
 
     @Override
