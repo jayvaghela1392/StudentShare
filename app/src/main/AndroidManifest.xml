@@ -30,7 +30,9 @@
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UserProfileActivity" />
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UpdateDetailsActivity" />
         <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.SearchProfile" />
-        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.SeeConnections"></activity>
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.SeeConnections" />
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.SeeInvitations" />
+        <activity android:name=".app.src.main.java.com.example.jayvaghela.loginregister.UI.SeeRequests"></activity>
     </application>
 
 </manifest>
