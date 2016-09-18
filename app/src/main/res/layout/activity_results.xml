@@ -9,31 +9,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".app.src.main.java.com.example.jayvaghela.loginregister.UI.Results">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="CLICK TO VIEW PROFILE"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:choiceMode="multipleChoiceModal"
         android:layout_below="@+id/etUsername"
-        android:layout_marginBottom="50dp"
-        android:choiceMode="multipleChoiceModal" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
         android:id="@+id/etUsername"
-        android:layout_below="@+id/textView"
         android:layout_marginTop="50dp"
         android:textSize="15dp" />
 
@@ -43,7 +32,15 @@
         android:text="Endorsements"
         android:id="@+id/etEndorsements"
         android:layout_above="@+id/listView"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView6"
+        android:src="@drawable/clicktoseemore"
+        android:layout_above="@+id/etEndorsements"
+        android:layout_alignRight="@+id/listView"
+        android:layout_alignEnd="@+id/listView" />
 </RelativeLayout>
