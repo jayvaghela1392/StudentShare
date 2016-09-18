@@ -60,7 +60,7 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
 
         Student user = parser.parseUser(userResponse);
 
-        welcomeMsg.setText("Welcome to " + user.getUsername() + "'s User Profile");
+        welcomeMsg.setText("welcome to " + user.getUsername() + "'s User Profile");
         tvUni.setText(user.getUni());
 
         lv.setAdapter(new ModulesAdapter(this, modules));

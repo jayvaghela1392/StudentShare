@@ -38,7 +38,7 @@ public class LoginRequest extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String s) {
         if (s.equalsIgnoreCase("Valid")) {
             Intent takeUserToWelcome = new Intent(context, Welcome.class);
-            Toast.makeText(context, "Welcome " + username, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "welcome " + username, Toast.LENGTH_SHORT).show();
 
             sp = new SharedPreference(context);
             sp.saveUsername(username);

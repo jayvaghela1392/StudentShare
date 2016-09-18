@@ -47,7 +47,7 @@
 //        //String username = intent.getStringExtra("username");
 //        //int age = intent.getIntExtra("age", -1);
 //
-//        String message = "Welcome " + username + "!";
+//        String message = "welcome " + username + "!";
 //        welcomeMessage.setText(message);
 //        //etName.setText(name);
 //        //etUsername.setText(username);

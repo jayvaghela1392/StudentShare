@@ -42,6 +42,6 @@
         android:layout_above="@+id/etEndorsements"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/Matchesfound" />
+        android:src="@drawable/matchesfound" />
 
 </RelativeLayout>
