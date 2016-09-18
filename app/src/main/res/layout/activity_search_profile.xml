@@ -9,14 +9,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".app.src.main.java.com.example.jayvaghela.loginregister.UI.UserProfileActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Matches Found, Please see your results below"
+        android:id="@+id/tvWelcomeMsg"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
     <ImageView
         android:layout_width="165dp"
         android:layout_height="178dp"
         android:id="@+id/profilepic"
         android:src="@drawable/head"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="53dp"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tvWelcomeMsg"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -47,7 +55,7 @@
         android:id="@+id/listView3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/btnRequestEmailAddress"
-        android:layout_below="@+id/tvUni" />
+        android:layout_below="@+id/tvUni"
+        android:layout_above="@+id/btnRequestEmailAddress" />
 
 </RelativeLayout>
