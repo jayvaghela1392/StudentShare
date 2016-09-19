@@ -32,8 +32,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         bLogin.setOnClickListener(this);
         registerLink.setOnClickListener(this);
 
-
-
     }
 
     @Override

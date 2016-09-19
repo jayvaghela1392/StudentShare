@@ -45,6 +45,7 @@ public class CourseResultsAdapter extends BaseAdapter {
     }
 
     @Override
+
     public View getView(int position, View view, ViewGroup parent) {
 
         if (view == null){

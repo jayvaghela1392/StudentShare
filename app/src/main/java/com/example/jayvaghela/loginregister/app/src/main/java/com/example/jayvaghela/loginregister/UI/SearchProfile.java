@@ -78,7 +78,6 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
 
     }
 
-
     private void extractInfo(){
 
         XMLParser parser = new XMLParser();
