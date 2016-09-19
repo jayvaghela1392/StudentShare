@@ -1,4 +1,4 @@
-package com.example.jayvaghela.loginregister;
+package com.example.jayvaghela.loginregister.app.src.androidTest.java.com.example.jayvaghela.loginregister;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
