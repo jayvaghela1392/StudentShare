@@ -1,4 +1,4 @@
-package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister;
+package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +19,7 @@ public class Welcome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        final ImageView iv = (ImageView) findViewById(R.id.imageView8);
+        final ImageView iv = (ImageView) findViewById(R.id.imageView);
 
         final Animation an = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
 
