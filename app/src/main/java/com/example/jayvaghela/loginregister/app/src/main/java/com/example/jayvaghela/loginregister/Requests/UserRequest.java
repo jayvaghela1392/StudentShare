@@ -1,38 +1,47 @@
-/*
+
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests;
 
 
-import com.android.volley.Response;
-import com.android.volley.toolbox.StringRequest;
+import android.content.Context;
+import android.os.AsyncTask;
+
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.SharedPreference;
 
 import java.util.HashMap;
-import java.util.Map;
 
-*/
 /**
  * Created by jayvaghela on 23/04/2016.
- *//*
+ */
 
-public class UserRequest extends StringRequest {
+public class UserRequest extends AsyncTask<String, Void, String> {
 
+    String url = "/user/searchuser?";
 
-    private static final String REGISTER_REQUEST_URL = "http://studentshareapp.comxa.com/uni.php";
-    private Map<String, String> params;
+    Context context;
 
-    public UserRequest(String university, String module, String email, Response.Listener<String> listener){
-        super(Method.POST, REGISTER_REQUEST_URL, listener, null);
-        params = new HashMap<>();
-        params.put("university", university);
-        params.put("module", module);
-        params.put("email", email);
+    SharedPreference sp;
 
 
-
+    public UserRequest(Context context)
+    {
+        this.context = context;
     }
+
     @Override
-    public Map <String, String> getParams(){
-        return params;
+    protected String doInBackground(String... params) {
 
+        sp = new SharedPreference(context);
+
+        HashMap<String, String> user = sp.getUserDetails();
+
+        String username = user.get(SharedPreference.username);
+
+        HTTP_Methods http_methods = new HTTP_Methods();
+        String parameters = ("username="+username);
+
+        String response = http_methods.GET(url + parameters);
+        return response.replace("\n", "");
     }
 
-}*/
+
+}

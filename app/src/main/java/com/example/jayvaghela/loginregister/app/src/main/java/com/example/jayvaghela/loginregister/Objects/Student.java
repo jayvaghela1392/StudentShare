@@ -3,7 +3,35 @@ package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayva
 public class Student {
     private String username;
     private int age;
+
+    public String getRequests() {
+        return requests;
+    }
+
+    public void setRequests(String requests) {
+        this.requests = requests;
+    }
+
+    public String getInvitations() {
+        return invitations;
+    }
+
+    public void setInvitations(String invitations) {
+        this.invitations = invitations;
+    }
+
+    public String getConnections() {
+        return connections;
+    }
+
+    public void setConnections(String connections) {
+        this.connections = connections;
+    }
+
     private String uni;
+    private String connections;
+    private String invitations;
+    private String requests;
 
     public String getUsername() {
         return username;

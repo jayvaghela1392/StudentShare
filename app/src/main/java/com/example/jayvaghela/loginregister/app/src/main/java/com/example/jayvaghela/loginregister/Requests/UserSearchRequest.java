@@ -1,4 +1,4 @@
-/*
+
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests;
 
 import com.android.volley.Response;
@@ -29,4 +29,4 @@ public class UserSearchRequest extends StringRequest {
     }
 }
 
-*/
+

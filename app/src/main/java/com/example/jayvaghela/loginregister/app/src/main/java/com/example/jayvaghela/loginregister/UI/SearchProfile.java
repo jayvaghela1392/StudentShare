@@ -13,7 +13,10 @@ import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvag
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Objects.Modules;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Objects.Student;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Parsers.XMLParser;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.EmailRequest;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.SharedPreference;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class SearchProfile extends AppCompatActivity implements View.OnClickListener{
@@ -25,6 +28,10 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
     Button requestEmail;
     ListView lv;
 
+    String username;
+
+    SharedPreference sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +39,11 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
 
         Intent intent = getIntent();
         bundle = intent.getExtras();
+
+        sp = new SharedPreference(this);
+        HashMap<String, String> user = sp.getUserDetails();
+
+        String requests = user.get(SharedPreference.requests);
 
         welcomeMsg = (TextView) findViewById(R.id.tvWelcomeMsg);
         tvUni = (TextView) findViewById(R.id.tvUni);
@@ -41,10 +53,28 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
         requestEmail.setOnClickListener(this);
 
         extractInfo();
+
+        if (requestEmail.getText().toString().equalsIgnoreCase("Waiting for user to Accept"))
+        {
+            requestEmail.setClickable(false);
+            requestEmail.setFocusable(false);
+        }
+        if (requests != null) {
+            if (requests.contains(username)) {
+
+                requestEmail.setClickable(false);
+                requestEmail.setFocusable(false);
+                requestEmail.setText("Waiting for user to Accept");
+            }
+        }
     }
 
     @Override
     public void onClick(View v) {
+
+        EmailRequest er = new EmailRequest(this, requestEmail);
+
+        er.execute(new String[]{username});
 
     }
 
@@ -60,7 +90,21 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
 
         Student user = parser.parseUser(userResponse);
 
-        welcomeMsg.setText("welcome to " + user.getUsername() + "'s User Profile");
+        HashMap<String, String> hashUser = sp.getUserDetails();
+
+        String connections = hashUser.get(SharedPreference.connection);
+
+
+        username = user.getUsername();
+
+
+        if (connections!= null) {
+            if (connections.contains(username)) {
+                requestEmail.setText(user.getEmail());
+            }
+        }
+
+        welcomeMsg.setText("welcome to " + username + "'s User Profile");
         tvUni.setText(user.getUni());
 
         lv.setAdapter(new ModulesAdapter(this, modules));

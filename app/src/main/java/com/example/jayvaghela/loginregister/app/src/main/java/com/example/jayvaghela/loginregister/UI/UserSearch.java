@@ -6,14 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.example.jayvaghela.loginregister.R;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.CourseSearchRequest;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ModulesRequest;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ResultsRequest;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.UsernameSearchRequest;
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.SharedPreference;
 
+import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class UserSearch extends AppCompatActivity implements View.OnClickListener{
@@ -25,6 +26,8 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
     EditText etCourse;
     EditText etModule ;
     EditText etUsername;
+
+    SharedPreference sp;
 
 
     @Override
@@ -99,7 +102,29 @@ public class UserSearch extends AppCompatActivity implements View.OnClickListene
                 break;
 
             case R.id.btnUserProfile:
+
+                sp = new SharedPreference(this);
+
+                HashMap<String, String> user = sp.getUserDetails();
+
+                String usrname = user.get(SharedPreference.username);
+                String mod = "";
+
+                ModulesRequest mq_ = new ModulesRequest(this);
+                Bundle bundle = new Bundle();
+                try {
+                    String modulesResponse = mq_.execute(new String[]{usrname, mod}).get();
+                    bundle.putString("moduleresponse", modulesResponse);
+
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+
                 Intent takeUserToProfile= new Intent(this, UserProfileActivity.class );
+                takeUserToProfile.putExtras(bundle);
                 startActivity(takeUserToProfile);
 
 

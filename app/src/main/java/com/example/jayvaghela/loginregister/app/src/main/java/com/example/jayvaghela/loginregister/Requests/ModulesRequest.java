@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.SharedPreference;
+
 /**
  * Created by jayvaghela on 17/09/2016.
  */
@@ -34,6 +36,10 @@ public class ModulesRequest extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String s) {
         if (s != null) {
+
+            SharedPreference sp = new SharedPreference(context);
+
+            sp.modules(s);
 
         } else {
             Toast.makeText(context, "Nothing found", Toast.LENGTH_SHORT).show();

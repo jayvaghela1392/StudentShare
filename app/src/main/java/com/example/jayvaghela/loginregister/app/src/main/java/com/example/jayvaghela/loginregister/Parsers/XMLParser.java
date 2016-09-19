@@ -208,6 +208,26 @@ public class XMLParser {
                             user.setUni(text);
                         }
 
+                        if (tag.equalsIgnoreCase("email"))
+                        {
+                            user.setEmail(text);
+                        }
+
+                        if (tag.equalsIgnoreCase("invitations"))
+                        {
+                            user.setInvitations(text);
+                        }
+
+                        if (tag.equalsIgnoreCase("connections"))
+                        {
+                            user.setConnections(text);
+                        }
+
+                        if (tag.equalsIgnoreCase("requests"))
+                        {
+                            user.setRequests(text);
+                        }
+
                         break;
                 }
                 eventType = parser.next();
@@ -274,6 +294,26 @@ public class XMLParser {
                         {
                             user.setUni(text);
 
+                        }
+
+                        if (tag.equalsIgnoreCase("email"))
+                        {
+                            user.setEmail(text);
+                        }
+
+                        if (tag.equalsIgnoreCase("invitations"))
+                        {
+                            user.setInvitations(text);
+                        }
+
+                        if (tag.equalsIgnoreCase("connections"))
+                        {
+                            user.setConnections(text);
+                        }
+
+                        if (tag.equalsIgnoreCase("requests"))
+                        {
+                            user.setRequests(text);
                         }
 
                         break;

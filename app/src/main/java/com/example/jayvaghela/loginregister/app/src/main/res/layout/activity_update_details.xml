@@ -71,7 +71,7 @@
         android:layout_below="@+id/textView11"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etAddModule"
-        android:layout_alignEnd="@+id/etAddModule" />
+        android:layout_alignRight="@+id/textView11"
+        android:layout_alignEnd="@+id/textView11" />
 
 </RelativeLayout>
