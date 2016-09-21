@@ -57,7 +57,7 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
 
         List<Modules> modules = parser.parseModules(modulesResponse);
 
-        lv.setAdapter(new ModulesAdapter(this, modules));
+        lv.setAdapter(new ModulesAdapter(this, modules, "nothing"));
 
         UserRequest ur = new UserRequest(UserProfileActivity.this);
         try {
