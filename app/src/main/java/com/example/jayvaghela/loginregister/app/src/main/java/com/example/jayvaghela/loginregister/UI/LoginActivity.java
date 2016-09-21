@@ -29,8 +29,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
          bLogin = (Button) findViewById(R.id.bLogin);
          registerLink = (TextView) findViewById(R.id.tvRegisterHere);
 
-        bLogin.setOnClickListener(this);
-        registerLink.setOnClickListener(this);
+         bLogin.setOnClickListener(this);
+         registerLink.setOnClickListener(this);
 
     }
 
