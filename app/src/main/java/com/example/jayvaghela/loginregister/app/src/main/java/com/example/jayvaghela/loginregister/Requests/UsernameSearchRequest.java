@@ -50,7 +50,7 @@ public class UsernameSearchRequest extends AsyncTask<String, Void, String> {
             context.startActivity(takeUserToResults);
 
         } else {
-            Toast.makeText(context, "Invalid Username", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Sorry, no matching Usernames were found. Please search again.", Toast.LENGTH_SHORT).show();
         }
     }
 }

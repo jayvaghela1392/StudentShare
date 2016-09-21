@@ -42,7 +42,7 @@ public class ModulesRequest extends AsyncTask<String, Void, String> {
             sp.modules(s);
 
         } else {
-            Toast.makeText(context, "Nothing found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Sorry, no matching Modules were found. Please search again.", Toast.LENGTH_SHORT).show();
         }
     }
 }

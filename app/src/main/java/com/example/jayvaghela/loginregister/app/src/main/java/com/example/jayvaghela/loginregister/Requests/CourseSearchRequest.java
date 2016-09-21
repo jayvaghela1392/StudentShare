@@ -49,8 +49,10 @@ public class CourseSearchRequest extends AsyncTask<String, Void, String> {
             context.startActivity(takeUserToResults);
 
         } else {
-            Toast.makeText(context, "Invalid Username/Password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Sorry, no matching Courses were found. Please search again.", Toast.LENGTH_SHORT).show();
         }
+
+
     }
 
 }
