@@ -27,8 +27,6 @@ public class CourseResultsAdapter extends BaseAdapter {
         this.students = students;
     }
 
-
-
     @Override
     public int getCount() {
         return students.size();

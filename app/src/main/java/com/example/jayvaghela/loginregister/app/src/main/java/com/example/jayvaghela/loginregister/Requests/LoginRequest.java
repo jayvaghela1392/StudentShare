@@ -23,7 +23,7 @@ public class LoginRequest extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-         username = params[0];
+        username = params[0];
         String password = params[1];
 
 

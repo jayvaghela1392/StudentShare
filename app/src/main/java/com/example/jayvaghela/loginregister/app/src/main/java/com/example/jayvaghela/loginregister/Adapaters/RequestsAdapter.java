@@ -10,24 +10,17 @@ import android.widget.TextView;
 import com.example.jayvaghela.loginregister.R;
 
 import java.util.List;
-
 /**
  * Created by samsonaiyegbusi on 14/08/16.
  */
 public class RequestsAdapter extends BaseAdapter {
 
     Context context;
-
     List<String> students;
-
     public RequestsAdapter(Context context, List<String> students){
-
         this.context = context;
         this.students = students;
     }
-
-
-
     @Override
     public int getCount() {
         return students.size();
@@ -52,11 +45,8 @@ public class RequestsAdapter extends BaseAdapter {
         }
 
         TextView tvusername = (TextView) view.findViewById(R.id.etUsername);
-
         String username = students.get(position);
-
         tvusername.setText(username);
-
         return view;
     }
 }

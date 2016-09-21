@@ -25,7 +25,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Username"
         android:id="@+id/textView3"
-        android:layout_marginTop="46dp"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -45,6 +44,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/listView3"
         android:layout_below="@+id/textView3"
+        android:layout_toStartOf="@+id/textView2"
         android:layout_alignRight="@+id/textView4"
         android:layout_alignEnd="@+id/textView4" />
 </RelativeLayout>

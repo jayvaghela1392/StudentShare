@@ -20,12 +20,11 @@ public class EmailRequest extends AsyncTask<String, Void, String> {
     String requestedusr;
 
     Button button;
-    public EmailRequest(Context context, Button button){
+    public EmailRequest(Context context, Button button) {
         this.context = context;
 
         this.button = button;
     }
-
 
     @Override
     protected String doInBackground(String... params) {

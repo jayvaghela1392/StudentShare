@@ -12,6 +12,9 @@ import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvag
  */
 public class RegisterRequest extends AsyncTask<String, Void, String> {
 
+
+
+
     String url = "/user/register";
 
     Context context;
@@ -27,8 +30,6 @@ public class RegisterRequest extends AsyncTask<String, Void, String> {
         String course = params[3];
         String email = params[4];
 
-
-
         HTTP_Methods http_methods = new HTTP_Methods();
         String parameters = ("username="+username+"&password="+password+"&university="+university+"&course="+course+"&email="+email);
 
@@ -42,6 +43,8 @@ public class RegisterRequest extends AsyncTask<String, Void, String> {
             Intent takeUserToLogin = new Intent(context, LoginActivity.class);
             Toast.makeText(context, "You have successfully made an account", Toast.LENGTH_SHORT).show();
             context.startActivity(takeUserToLogin);
+
+
 
         } else {
             Toast.makeText(context, "This username already exist", Toast.LENGTH_SHORT).show();

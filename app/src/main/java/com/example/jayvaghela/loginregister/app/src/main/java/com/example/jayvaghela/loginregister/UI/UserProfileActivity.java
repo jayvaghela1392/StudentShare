@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.example.jayvaghela.loginregister.R;
@@ -26,7 +27,7 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
 
     Button btnModules;
     Button btnConnections;
-
+    ImageButton btnBackUserPro;
     ListView lv;
 
     SharedPreference sp;
@@ -35,6 +36,9 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        btnBackUserPro = (ImageButton) findViewById(R.id.btnBackUserPro);
+        btnBackUserPro.setOnClickListener(this);
 
         btnModules = (Button) findViewById(R.id.btnModules);
         btnModules.setOnClickListener(this);
@@ -167,6 +171,10 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
                 startActivity(takeUserToUpdateModules);
                 break;
 
+            case R.id.btnBackUserPro:
+                Intent takeUserToHome = new Intent(this, SearchProfile.class );
+                startActivity(takeUserToHome);
+                break;
         }
     }
 

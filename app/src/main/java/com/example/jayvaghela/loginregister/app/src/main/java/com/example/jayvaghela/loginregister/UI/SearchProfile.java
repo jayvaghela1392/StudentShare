@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,7 +21,7 @@ import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvag
 import java.util.HashMap;
 import java.util.List;
 
-public class SearchProfile extends AppCompatActivity implements View.OnClickListener{
+public class SearchProfile extends AppCompatActivity implements View.OnClickListener {
 
     Bundle bundle;
 
@@ -32,10 +34,16 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
 
     SharedPreference sp;
 
+    ImageView btnBackMatchesFound;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_profile);
+
+        btnBackMatchesFound = (ImageButton) findViewById(R.id.btnBackMatchesFound);
+        btnBackMatchesFound.setOnClickListener(this);
+
 
         Intent intent = getIntent();
         bundle = intent.getExtras();
@@ -54,8 +62,7 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
 
         extractInfo();
 
-        if (requestEmail.getText().toString().equalsIgnoreCase("Waiting for user to Accept"))
-        {
+        if (requestEmail.getText().toString().equalsIgnoreCase("Waiting for user to Accept")) {
             requestEmail.setClickable(false);
             requestEmail.setFocusable(false);
         }
@@ -77,6 +84,7 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
         er.execute(new String[]{username});
 
     }
+
 
     private void extractInfo(){
 
@@ -107,6 +115,9 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
         tvUni.setText(user.getUni());
 
         lv.setAdapter(new ModulesAdapter(this, modules));
+
+
+
 
     }
 }
