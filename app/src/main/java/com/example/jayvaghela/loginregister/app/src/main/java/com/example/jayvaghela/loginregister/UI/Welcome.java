@@ -1,6 +1,5 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +8,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.example.jayvaghela.loginregister.R;
-import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI.UserSearch;
 
 public class Welcome extends AppCompatActivity {
 

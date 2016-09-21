@@ -114,7 +114,7 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
         welcomeMsg.setText("welcome to " + username + "'s User Profile");
         tvUni.setText(user.getUni());
 
-        lv.setAdapter(new ModulesAdapter(this, modules));
+        lv.setAdapter(new ModulesAdapter(this, modules, connections));
 
 
 

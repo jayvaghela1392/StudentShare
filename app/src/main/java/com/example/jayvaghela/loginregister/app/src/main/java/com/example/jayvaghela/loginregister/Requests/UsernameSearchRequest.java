@@ -34,7 +34,12 @@ public class UsernameSearchRequest extends AsyncTask<String, Void, String> {
         String parameters = ("username="+username);
 
         String response = http_methods.GET(url + parameters);
-        return response.replace("\n", "");
+        if (response == null)
+        {
+            return null;
+        } else {
+            return response.replace("\n", "");
+        }
     }
 
     @Override
