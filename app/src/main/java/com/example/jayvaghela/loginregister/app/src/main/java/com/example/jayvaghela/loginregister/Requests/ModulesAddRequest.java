@@ -13,7 +13,7 @@ import java.util.HashMap;
  */
 public class ModulesAddRequest extends AsyncTask<String, Void, String> {
 
-    String url = "/modules/addmodule?";
+    String url = "/modules/addmodule";
 
     Context context;
     SharedPreference sp;

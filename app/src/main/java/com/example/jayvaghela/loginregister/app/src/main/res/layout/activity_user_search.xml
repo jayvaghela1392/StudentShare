@@ -93,8 +93,8 @@
         android:layout_alignTop="@+id/btnsm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etSearchCourse"
-        android:layout_alignEnd="@+id/etSearchCourse" />
+        android:layout_alignRight="@+id/acSearchCourse"
+        android:layout_alignEnd="@+id/acSearchCourse" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
         android:layout_alignTop="@+id/btnsu"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etSearchModule"
-        android:layout_alignEnd="@+id/etSearchModule" />
+        android:layout_alignRight="@+id/acSearchModule"
+        android:layout_alignEnd="@+id/acSearchModule" />
 
 </RelativeLayout>

@@ -65,35 +65,18 @@
         android:layout_alignLeft="@+id/btnsm"
         android:layout_alignStart="@+id/btnsm" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etSearchCourse"
-        android:layout_alignTop="@+id/btnsc"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/btnsc"
-        android:layout_toStartOf="@+id/btnsc" />
 
-    <EditText
-        android:layout_width="wrap_content"
+
+    <android.support.v7.widget.AppCompatAutoCompleteTextView
+
+    android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etSearchModule"
+        android:id="@+id/acSearchModule"
         android:layout_alignTop="@+id/btnsm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etSearchCourse"
-        android:layout_alignEnd="@+id/etSearchCourse" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etSearchUsername"
-        android:layout_alignTop="@+id/btnsu"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etSearchModule"
-        android:layout_alignEnd="@+id/etSearchModule" />
+        android:layout_alignRight="@+id/acSearchCourse"
+        android:layout_alignEnd="@+id/acSearchCourse" />
 
     <Button
         android:layout_width="wrap_content"
@@ -107,5 +90,23 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <android.support.v7.widget.AppCompatAutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/acSearchCourse"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_above="@+id/acSearchModule"
+        android:layout_toLeftOf="@+id/btnsc" />
+
+    <android.support.v7.widget.AppCompatAutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/auSearchUsername"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/acSearchModule"
+        android:layout_toLeftOf="@+id/btnsu" />
 
 </RelativeLayout>

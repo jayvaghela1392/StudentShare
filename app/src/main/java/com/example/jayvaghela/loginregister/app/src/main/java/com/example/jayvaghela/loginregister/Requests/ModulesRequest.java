@@ -2,7 +2,6 @@ package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayva
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.SharedPreference;
 
@@ -47,7 +46,6 @@ public class ModulesRequest extends AsyncTask<String, Void, String> {
             sp.modules(s);
 
         } else {
-            Toast.makeText(context, "Sorry, no matching Modules were found. Please search again.", Toast.LENGTH_SHORT).show();
         }
     }
 }

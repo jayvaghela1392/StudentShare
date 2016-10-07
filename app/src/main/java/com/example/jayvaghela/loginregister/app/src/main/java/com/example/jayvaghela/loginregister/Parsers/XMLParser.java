@@ -203,6 +203,12 @@ public class XMLParser {
 
                         }
 
+                        if (tag.equalsIgnoreCase("course"))
+                        {
+                            user.setUsername(text);
+
+                        }
+
                         if (tag.equalsIgnoreCase("university"))
                         {
                             user.setUni(text);
@@ -299,6 +305,12 @@ public class XMLParser {
                         if (tag.equalsIgnoreCase("email"))
                         {
                             user.setEmail(text);
+                        }
+
+                        if (tag.equalsIgnoreCase("course"))
+                        {
+                            user.setCourse(text);
+
                         }
 
                         if (tag.equalsIgnoreCase("invitations"))

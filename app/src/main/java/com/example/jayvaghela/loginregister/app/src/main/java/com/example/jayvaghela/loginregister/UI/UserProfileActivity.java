@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.example.jayvaghela.loginregister.R;
@@ -27,7 +26,6 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
 
     Button btnModules;
     Button btnConnections;
-    ImageButton btnBackUserPro;
     ListView lv;
 
     SharedPreference sp;
@@ -37,8 +35,8 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        btnBackUserPro = (ImageButton) findViewById(R.id.btnBackUserPro);
-        btnBackUserPro.setOnClickListener(this);
+
+
 
         btnModules = (Button) findViewById(R.id.btnModules);
         btnModules.setOnClickListener(this);
@@ -79,7 +77,7 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnConnections:
 
                 final CharSequence[] items = {"View Requests", "View Connections", "View Invitations"};
@@ -96,8 +94,7 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
                 builder.setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
-                        if (items[item].toString().equalsIgnoreCase("View Requests"))
-                        {
+                        if (items[item].toString().equalsIgnoreCase("View Requests")) {
 
                             UserRequest ur = new UserRequest(UserProfileActivity.this);
                             try {
@@ -116,9 +113,7 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
                             }
 
 
-
-                        } else if(items[item].toString().equalsIgnoreCase("View Connections"))
-                        {
+                        } else if (items[item].toString().equalsIgnoreCase("View Connections")) {
 
                             UserRequest ur = new UserRequest(UserProfileActivity.this);
                             try {
@@ -126,7 +121,7 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
                                 Bundle bundle = new Bundle();
                                 bundle.putString("userresponse", userResponse);
 
-                                Intent takeUserToConnections = new Intent(UserProfileActivity.this, SeeConnections.class );
+                                Intent takeUserToConnections = new Intent(UserProfileActivity.this, SeeConnections.class);
                                 takeUserToConnections.putExtras(bundle);
                                 startActivity(takeUserToConnections);
 
@@ -137,9 +132,7 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
                             }
 
 
-
-                        } else if(items[item].toString().equalsIgnoreCase("View Invitations"))
-                        {
+                        } else if (items[item].toString().equalsIgnoreCase("View Invitations")) {
 
 
                             UserRequest ur = new UserRequest(UserProfileActivity.this);
@@ -148,7 +141,7 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
                                 Bundle bundle = new Bundle();
                                 bundle.putString("userresponse", userResponse);
 
-                                Intent takeUserToInvitations = new Intent(UserProfileActivity.this, SeeInvitations.class );
+                                Intent takeUserToInvitations = new Intent(UserProfileActivity.this, SeeInvitations.class);
                                 takeUserToInvitations.putExtras(bundle);
                                 startActivity(takeUserToInvitations);
 
@@ -159,21 +152,15 @@ public class UserProfileActivity extends Activity implements View.OnClickListene
                             }
 
 
-
                         }
                     }
                 });
                 builder.show();
 
-            break;
-            case R.id.btnModules:
-                Intent takeUserToUpdateModules = new Intent(this, UpdateDetailsActivity.class );
-                startActivity(takeUserToUpdateModules);
                 break;
-
-            case R.id.btnBackUserPro:
-                Intent takeUserToHome = new Intent(this, SearchProfile.class );
-                startActivity(takeUserToHome);
+            case R.id.btnModules:
+                Intent takeUserToUpdateModules = new Intent(this, UpdateDetailsActivity.class);
+                startActivity(takeUserToUpdateModules);
                 break;
         }
     }

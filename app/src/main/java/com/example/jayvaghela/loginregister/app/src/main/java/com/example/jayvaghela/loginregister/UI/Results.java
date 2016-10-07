@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jayvaghela.loginregister.R;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Adapaters.CourseResultsAdapter;
@@ -71,8 +72,13 @@ public class Results extends AppCompatActivity implements AdapterView.OnItemClic
         ModulesRequest mq = new ModulesRequest(this);
         try {
             String modulesResponse = mq.execute(new String[]{username, module}).get();
-            UsernameSearchRequest usr = new UsernameSearchRequest(this, modulesResponse);
-            usr.execute(new String[]{username});
+            if (modulesResponse!= null) {
+                UsernameSearchRequest usr = new UsernameSearchRequest(this, modulesResponse);
+                usr.execute(new String[]{username});
+            } else {
+
+                Toast.makeText(this, "Sorry, this person does not have any modules", Toast.LENGTH_SHORT).show();
+            }
 
 
         } catch (InterruptedException e) {
