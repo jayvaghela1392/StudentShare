@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,16 +31,12 @@ public class SearchProfile extends AppCompatActivity implements View.OnClickList
     String username;
 
     SharedPreference sp;
-
-    ImageView btnBackMatchesFound;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_profile);
-
-        btnBackMatchesFound = (ImageButton) findViewById(R.id.btnBackMatchesFound);
-        btnBackMatchesFound.setOnClickListener(this);
 
 
         Intent intent = getIntent();

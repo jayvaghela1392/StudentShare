@@ -1,12 +1,10 @@
 package com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.UI;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 
 import com.example.jayvaghela.loginregister.R;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.RegisterRequest;
@@ -21,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     EditText etPassword ;
 
     Button bRegister;
-    ImageButton btnBackRegister;
+
 
     RegisterRequest rq;
 
@@ -41,8 +39,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         bRegister.setOnClickListener(this);
 
-        btnBackRegister = (ImageButton)findViewById(R.id.btnBackRegister);
-        btnBackRegister.setOnClickListener(this);
 
     }
 
@@ -64,10 +60,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 rq.execute(new String[]{username, password, uni, course, email});
                 break;
 
-            case R.id.btnBackRegister:
-                Intent takeUserToLogin = new Intent(this, LoginActivity.class );
-                startActivity(takeUserToLogin);
-                break;
 
 
         }
