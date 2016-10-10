@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.jayvaghela.loginregister.R;
 import com.example.jayvaghela.loginregister.app.src.main.java.com.example.jayvaghela.loginregister.Requests.ModulesAddRequest;
@@ -40,8 +41,35 @@ public class UpdateDetailsActivity extends AppCompatActivity implements View.OnC
         {
             case R.id.btnSubmitModule:
 
+
                 String mod = etAddModule.getText().toString();
                 String exp = etExp.getText().toString();
+
+
+
+                 if (exp.equalsIgnoreCase(""))
+                {
+                    Toast.makeText(this, "You have not entered a figure", Toast.LENGTH_SHORT).show();
+                    break;
+                } else if (mod.equalsIgnoreCase(""))
+                {
+                    Toast.makeText(this, "You have not entered a module", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+
+                int expInt = Integer.parseInt(exp);
+
+
+                if (expInt > 10)
+                 {
+                     Toast.makeText(this, "It seems you have entered a number above the given range", Toast.LENGTH_SHORT).show();
+                     break;
+                 } else if (expInt < 1)
+                 {
+                     Toast.makeText(this, "It seems you have entered a number below the given range", Toast.LENGTH_SHORT).show();
+                     break;
+                 }
+
 
                 ModulesAddRequest mar = new ModulesAddRequest(this);
                 mar.execute(new String[]{mod, exp});
