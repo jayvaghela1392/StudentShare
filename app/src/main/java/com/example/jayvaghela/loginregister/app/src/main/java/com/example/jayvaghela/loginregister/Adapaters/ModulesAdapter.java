@@ -72,11 +72,13 @@ public class ModulesAdapter extends BaseAdapter implements View.OnClickListener{
         endo = (ImageButton) view.findViewById(R.id.btnEndorse);
         endo.setVisibility(View.INVISIBLE);
 
-        if(connection.contains(modUser)) {
-            endo.setVisibility(View.VISIBLE);
-            endo.setOnClickListener(this);
-            CheckEndoRequest er = new CheckEndoRequest(context, endo);
-            er.execute(new String[]{modUser, modules_});
+        if (connection != null) {
+            if (connection.contains(modUser)) {
+                endo.setVisibility(View.VISIBLE);
+                endo.setOnClickListener(this);
+                CheckEndoRequest er = new CheckEndoRequest(context, endo);
+                er.execute(new String[]{modUser, modules_});
+            }
         }
 
 
